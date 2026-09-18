@@ -1,0 +1,117 @@
+body{
+
+    margin:0;
+
+    font-family:Arial,sans-serif;
+
+    background:#0f172a;
+
+}
+
+.verify-container{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+
+}
+
+.verify-card{
+
+    width:420px;
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    color:white;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+}
+
+.verify-icon{
+
+    font-size:55px;
+
+    color:#38bdf8;
+
+    margin-bottom:15px;
+
+}
+
+.verify-card h2{
+
+    margin:10px 0;
+
+}
+
+.verify-card p{
+
+    color:#cbd5e1;
+
+    margin-bottom:30px;
+
+    line-height:1.6;
+
+}
+
+.verify-card input{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:18px;
+
+    border-radius:10px;
+
+    border:none;
+
+    margin-bottom:20px;
+
+    outline:none;
+
+    text-align:center;
+
+    letter-spacing:4px;
+
+}
+
+.verify-card button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.verify-card button:hover{
+
+    background:#1d4ed8;
+
+}

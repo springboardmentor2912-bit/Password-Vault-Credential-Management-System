@@ -1,0 +1,379 @@
+/* ===========================
+   BODY
+=========================== */
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.vault-container{
+    padding:30px;
+    min-height:100vh;
+}
+
+.vault-container h1{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:30px;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.add-form{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.add-form input,
+.add-form textarea,
+.add-form select{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    outline:none;
+    font-size:15px;
+    box-sizing:border-box;
+}
+
+.add-form textarea{
+    resize:none;
+    min-height:90px;
+}
+
+/* ===========================
+   FAVORITE
+=========================== */
+
+.favorite-section{
+    grid-column:1/-1;
+    display:flex;
+    align-items:center;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+
+.favorite-label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    font-size:17px;
+    font-weight:600;
+    color:#1f2937;
+}
+
+.favorite-label input{
+    width:18px;
+    height:18px;
+    margin:0;
+    accent-color:#2563eb;
+}
+
+.favorite-label span{
+    margin:0;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.generate-btn,
+.save-btn{
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    color:white;
+    transition:.3s;
+}
+
+.generate-btn{
+    background:#0ea5e9;
+}
+
+.generate-btn:hover{
+    background:#0284c7;
+}
+
+.save-btn{
+    background:#16a34a;
+}
+
+.save-btn:hover{
+    background:#15803d;
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.search-box{
+    width:100%;
+    padding:15px;
+    border-radius:8px;
+    border:1px solid #cbd5e1;
+    margin-bottom:25px;
+    box-sizing:border-box;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.vault-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:20px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.vault-card{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.vault-card:hover{
+    transform:translateY(-5px);
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.card-header h2{
+    color:#2563eb;
+}
+
+.favorite-btn{
+    background:none;
+    border:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.favorite-btn:hover{
+    transform:scale(1.2);
+}
+
+.vault-card p{
+    margin:8px 0;
+    color:#374151;
+}
+
+/* ===========================
+   ACTION BUTTONS
+=========================== */
+
+.buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.buttons button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.buttons button:nth-child(1){
+    background:#2563eb;
+}
+
+.buttons button:nth-child(2){
+    background:#7c3aed;
+}
+
+.buttons button:nth-child(3){
+    background:#f59e0b;
+}
+
+.buttons button:nth-child(4){
+    background:#dc2626;
+}
+
+.buttons button:hover{
+    opacity:.9;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    .add-form{
+        grid-template-columns:1fr;
+    }
+
+    .vault-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+/* ==========================
+   SHARE BUTTON
+========================== */
+
+.share-btn {
+    background: #0891b2 !important;
+}
+
+/* ==========================
+   SHARE OVERLAY
+========================== */
+
+.share-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+/* ==========================
+   SHARE MODAL
+========================== */
+
+.share-modal {
+    width: 90%;
+    max-width: 450px;
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+    box-sizing: border-box;
+}
+
+.share-modal h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #1e3a8a;
+}
+
+.share-modal label {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #374151;
+}
+
+.share-modal input,
+.share-modal select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+}
+
+.share-permission-info {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    background: #eff6ff;
+
+    border-radius: 8px;
+
+    color: #1e40af;
+}
+
+.share-permission-info p {
+    margin: 0;
+}
+
+/* ==========================
+   MODAL BUTTONS
+========================== */
+
+.share-modal-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.share-modal-buttons button {
+    flex: 1;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    color: white;
+}
+
+.share-confirm-btn {
+    background: #2563eb;
+}
+
+.share-cancel-btn {
+    background: #dc2626;
+}
+
+.share-confirm-btn:hover,
+.share-cancel-btn:hover {
+    opacity: 0.9;
+}

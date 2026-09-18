@@ -1,0 +1,23 @@
+.settings-container{
+    background:#0f172a;
+    min-height:100vh;
+    color:white;
+    padding:40px;
+}
+
+.settings-container h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.settings-card{
+    width:500px;
+    margin:auto;
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+}
+
+.settings-card h3{
+    margin-top:20px;
+}
