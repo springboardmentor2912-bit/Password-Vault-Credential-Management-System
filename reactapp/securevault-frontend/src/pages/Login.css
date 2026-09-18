@@ -1,0 +1,218 @@
+body{
+
+    margin:0;
+
+    font-family:'Inter',sans-serif;
+
+}
+
+.login-container{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(135deg,#0F172A,#1E293B);
+
+}
+
+.login-box{
+
+    width:420px;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(15px);
+
+    padding:45px;
+
+    border-radius:22px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.logo{
+
+    width:80px;
+
+    height:80px;
+
+    background:#2563EB;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:32px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+}
+
+.login-box h1{
+
+    text-align:center;
+
+    color:#111827;
+
+    margin-bottom:5px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#64748B;
+
+    margin-bottom:30px;
+
+}
+
+.login-box input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:15px;
+
+    border:1px solid #CBD5E1;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    color:#111827;
+
+    box-sizing:border-box;
+
+}
+
+.login-box input:focus{
+
+    outline:none;
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 10px rgba(37,99,235,.2);
+
+}
+
+.password-box{
+
+    position:relative;
+
+}
+
+.password-box span{
+
+    position:absolute;
+
+    right:15px;
+
+    top:30px;
+
+    cursor:pointer;
+
+    color:#64748B;
+
+}
+
+.login-box button{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:25px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-box button:hover{
+
+    background:#1D4ED8;
+
+    transform:translateY(-2px);
+
+}
+
+.forgot-text,
+
+.register-text{
+
+    text-align:center;
+
+    margin-top:18px;
+
+}
+
+.forgot-text a,
+
+.register-text a{
+
+    color:#2563EB;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.message{
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+}
+
+.success{
+
+    background:#DCFCE7;
+
+    color:#166534;
+
+}
+
+.error{
+
+    background:#FEE2E2;
+
+    color:#991B1B;
+
+}
