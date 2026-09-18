@@ -1,0 +1,550 @@
+/* =========================================================
+   SECURITY REPORTS PAGE
+   ========================================================= */
+
+.reports-page {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(20, 184, 166, 0.08),
+      transparent 35%
+    ),
+    #0b1220;
+  color: #f8fafc;
+  padding: 30px 35px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.reports-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 10px 16px;
+  background: #141f31;
+  color: #cbd5e1;
+  border: 1px solid #263449;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reports-back-button:hover {
+  background: #172638;
+  color: #14b8a6;
+  border-color: #14b8a6;
+  transform: translateX(-2px);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.reports-header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 28px;
+}
+
+.reports-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+}
+
+.reports-header p {
+  margin: 8px 0 0;
+  color: #94a3b8;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   REPORT SECTION
+   ========================================================= */
+
+.report-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 25px;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #111c2e;
+  border: 1px solid #263449;
+  border-radius: 16px;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.report-section h2 {
+  margin: 0 0 20px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.report-section h3 {
+  margin: 0 0 15px;
+  font-size: 17px;
+  font-weight: 650;
+  color: #e2e8f0;
+}
+
+
+/* =========================================================
+   REPORT CARDS
+   ========================================================= */
+
+.report-cards {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.report-card {
+  min-height: 115px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #141f31;
+  border: 1px solid #263449;
+  border-radius: 14px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-2px);
+  border-color: #3b4b68;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.report-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #94a3b8;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.report-card strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 30px;
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   PASSWORD STRENGTH COLORS
+   ========================================================= */
+
+.strong-card {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.strong-card strong {
+  color: #22c55e;
+}
+
+.medium-card {
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.medium-card strong {
+  color: #f59e0b;
+}
+
+.weak-card {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.weak-card strong {
+  color: #f87171;
+}
+
+
+/* =========================================================
+   PASSWORD HEALTH SUMMARY
+   ========================================================= */
+
+.health-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #141f31;
+  border: 1px solid #263449;
+  border-radius: 14px;
+}
+
+.health-summary h3 {
+  margin: 0 0 12px;
+}
+
+.health-score {
+  margin-bottom: 8px;
+  font-size: 48px;
+  font-weight: 800;
+  color: #14b8a6;
+}
+
+.health-summary p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOGIN ACTIVITY CARDS
+   ========================================================= */
+
+.success-card {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.success-card strong {
+  color: #22c55e;
+}
+
+.failed-card {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.failed-card strong {
+  color: #f87171;
+}
+
+
+/* =========================================================
+   LOGIN TABLE
+   ========================================================= */
+
+.login-table-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: #141f31;
+  border: 1px solid #263449;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.login-table-container h3 {
+  margin: 0;
+  padding: 20px 20px 15px;
+}
+
+.login-report-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.login-report-table thead {
+  background: #172235;
+}
+
+.login-report-table th {
+  padding: 14px 20px;
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid #263449;
+}
+
+.login-report-table td {
+  padding: 14px 20px;
+  color: #e2e8f0;
+  font-size: 13px;
+  border-bottom: 1px solid #263449;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.login-report-table tbody tr:hover {
+  background: #1a2638;
+}
+
+.login-report-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   LOGIN STATUS
+   ========================================================= */
+
+.status-success,
+.status-failed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-success {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.status-failed {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.report-error {
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  margin: 30px auto;
+  padding: 15px 18px;
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  border-radius: 10px;
+  color: #fca5a5;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   NO LOGIN DATA
+   ========================================================= */
+
+.no-login-data {
+  margin: 0;
+  padding: 35px 20px;
+  text-align: center;
+  color: #64748b;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .reports-page {
+    padding: 25px;
+  }
+
+  .report-cards {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .report-section {
+    padding: 22px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .reports-page {
+    padding: 18px 12px;
+  }
+
+  .reports-back-button {
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  .reports-header {
+    margin-bottom: 20px;
+  }
+
+  .reports-header h1 {
+    font-size: 27px;
+  }
+
+  .reports-header p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .report-section {
+    padding: 15px 12px;
+    margin-bottom: 18px;
+    border-radius: 13px;
+  }
+
+  .report-section h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .report-section h3 {
+    font-size: 15px;
+  }
+
+  .report-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .report-card {
+    min-height: 95px;
+    padding: 16px;
+  }
+
+  .report-card span {
+    font-size: 12px;
+  }
+
+  .report-card strong {
+    font-size: 26px;
+  }
+
+  .health-summary {
+    padding: 20px 15px;
+  }
+
+  .health-score {
+    font-size: 40px;
+  }
+
+  .health-summary p {
+    font-size: 13px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE LOGIN TABLE
+     ----------------------------------------- */
+
+  .login-table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .login-table-container h3 {
+    padding: 15px 12px 12px;
+    font-size: 15px;
+  }
+
+  .login-report-table {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    table-layout: fixed;
+  }
+
+  .login-report-table th,
+  .login-report-table td {
+    padding: 9px 6px;
+    font-size: 10px;
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+
+  /* Email column */
+  .login-report-table th:nth-child(1),
+  .login-report-table td:nth-child(1) {
+    width: 38%;
+  }
+
+
+  /* Status column */
+  .login-report-table th:nth-child(2),
+  .login-report-table td:nth-child(2) {
+    width: 20%;
+  }
+
+
+  /* Time column */
+  .login-report-table th:nth-child(3),
+  .login-report-table td:nth-child(3) {
+    width: 42%;
+  }
+
+
+  .status-success,
+  .status-failed {
+    padding: 4px 5px;
+    font-size: 8px;
+    white-space: nowrap;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .reports-page {
+    padding: 15px 9px;
+  }
+
+  .report-section {
+    padding: 13px 9px;
+  }
+
+  .report-card {
+    padding: 14px;
+  }
+
+  .login-report-table th,
+  .login-report-table td {
+    padding: 8px 4px;
+    font-size: 9px;
+  }
+
+  .status-success,
+  .status-failed {
+    padding: 3px 4px;
+    font-size: 7px;
+  }
+
+}
