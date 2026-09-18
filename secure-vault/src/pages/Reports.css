@@ -1,0 +1,1113 @@
+/* =========================================================
+   REPORTS PAGE - MAIN
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.reports-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 45px;
+    background:
+        radial-gradient(circle at 10% 15%, #b9e7ff 0%, transparent 32%),
+        radial-gradient(circle at 90% 20%, #d9c7ff 0%, transparent 30%),
+        radial-gradient(circle at 80% 90%, #bcecff 0%, transparent 32%),
+        linear-gradient(135deg, #e9f7ff 0%, #cfeaff 45%, #e8ddff 100%);
+    color: #212529;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.reports-header {
+    width: 100%;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 14px;
+    margin-bottom: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+    background: white;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+}
+
+.header-icon {
+    font-size: 32px;
+    background: white;
+}
+
+.header-title h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #212529;
+    background: white;
+}
+
+.reports-header p {
+    margin: 8px 0 0;
+    color: #6c757d;
+    font-size: 15px;
+    background: white;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.refresh-button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+
+    background: #0d6efd;
+    color: white;
+
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.refresh-button:hover {
+    background: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   REPORT SECTION
+========================================================= */
+
+.report-section {
+    width: 100%;
+    background: white;
+
+    padding: 30px;
+    border-radius: 14px;
+    margin-bottom: 30px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 25px;
+    background: white;
+}
+
+.section-report {
+    background: white;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+
+    font-size: 22px;
+    color: #212529;
+
+    background: white;
+}
+
+.section-heading p {
+    margin: 0;
+
+    color: #6c757d;
+    font-size: 14px;
+
+    background: white;
+}
+
+.section-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    font-size: 24px;
+}
+
+.password-icon {
+    background: #eef2ff;
+}
+
+.login-icon {
+    background: #e8f5e9;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS CONTAINER
+========================================================= */
+
+.report-cards {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    background: white;
+}
+
+
+/* =========================================================
+   REPORT CARD
+========================================================= */
+
+.report-card {
+    background: #f8f9fa;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    border: 1px solid #e9ecef;
+
+    transition: all 0.25s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.10);
+}
+
+.report-card h3 {
+    margin: 8px 0;
+
+    font-size: 15px;
+    color: #6c757d;
+
+    background: #f8f9fa;
+}
+
+.report-card h1 {
+    margin: 5px 0;
+
+    font-size: 34px;
+    color: #212529;
+
+    background: #f8f9fa;
+}
+
+.report-card p {
+    margin: 5px 0 0;
+
+    font-size: 13px;
+    color: #868e96;
+
+    background: #f8f9fa;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.card-icon {
+    font-size: 25px;
+    background: transparent;
+}
+
+
+/* =========================================================
+   PASSWORD NUMBER COLORS
+========================================================= */
+
+.strong-number {
+    color: #198754 !important;
+    background: transparent !important;
+}
+
+.medium-number {
+    color: #f39c12 !important;
+    background: transparent !important;
+}
+
+.weak-number {
+    color: #dc3545 !important;
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   CARD TOP BORDERS
+========================================================= */
+
+.strong-card {
+    border-top: 4px solid #198754;
+}
+
+.medium-card {
+    border-top: 4px solid #f39c12;
+}
+
+.weak-card {
+    border-top: 4px solid #dc3545;
+}
+
+.total-card {
+    border-top: 4px solid #0d6efd;
+}
+
+
+/* =========================================================
+   PASSWORD HEALTH SUMMARY
+========================================================= */
+
+.health-summary {
+    width: 100%;
+
+    margin-top: 25px;
+    padding: 25px;
+
+    border-radius: 12px;
+
+    background: #eef2ff;
+    border: 1px solid #dfe5ff;
+}
+
+
+/* =========================================================
+   HEALTH INFORMATION
+========================================================= */
+
+.health-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #eef2ff;
+}
+
+.health-info h3 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+    color: #212529;
+
+    background: #eef2ff;
+}
+
+.health-info p {
+    margin: 0;
+
+    color: #6c757d;
+    font-size: 13px;
+
+    background: #eef2ff;
+}
+
+
+/* =========================================================
+   HEALTH SCORE
+========================================================= */
+
+.health-score {
+    font-size: 38px;
+
+    font-weight: bold;
+
+    color: #198754;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   HEALTH PROGRESS BAR
+========================================================= */
+
+.health-progress {
+    width: 100%;
+    height: 12px;
+
+    background: #dee2e6;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-top: 20px;
+}
+
+.health-progress-bar {
+    height: 100%;
+
+    background: #198754;
+
+    border-radius: 10px;
+
+    transition: width 0.6s ease;
+}
+
+
+/* =========================================================
+   HEALTH STATUS
+========================================================= */
+
+.health-status {
+    margin-top: 12px;
+    background: #eef2ff;
+}
+
+.health-status span {
+    display: inline-block;
+
+    padding: 6px 13px;
+
+    border-radius: 20px;
+
+    background: #d1e7dd;
+    color: #146c43;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   LOGIN SUMMARY
+========================================================= */
+
+.login-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   RECENT ACTIVITY
+========================================================= */
+
+.recent-activity {
+    width: 100%;
+    margin-top: 30px;
+
+    background: white;
+}
+
+.recent-heading {
+    margin-bottom: 15px;
+    background: white;
+}
+
+.recent-heading h3 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+    color: #212529;
+
+    background: white;
+}
+
+.recent-heading p {
+    margin: 0;
+
+    color: #6c757d;
+    font-size: 13px;
+
+    background: white;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.report-table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+
+    background: white;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.report-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 600px;
+
+    background: white;
+}
+
+.report-table th {
+    padding: 15px;
+
+    background: #f1f3f5;
+
+    color: #343a40;
+
+    text-align: left;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    border-bottom: 2px solid #dee2e6;
+}
+
+.report-table td {
+    padding: 15px;
+
+    background: white;
+
+    border-bottom: 1px solid #e9ecef;
+
+    font-size: 14px;
+    color: #495057;
+}
+
+.report-table tbody tr {
+    transition: background 0.2s;
+}
+
+.report-table tbody tr:hover td {
+    background: #f8f9fa;
+}
+
+.report-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.email-cell {
+    font-weight: 500;
+
+    color: #212529 !important;
+
+    background: white;
+}
+
+
+/* =========================================================
+   TIME
+========================================================= */
+
+.time-cell {
+    color: #6c757d !important;
+
+    background: white;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.status-badge {
+    display: inline-block;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.success-badge {
+    background: #d1e7dd !important;
+    color: #146c43 !important;
+}
+
+.failed-badge {
+    background: #f8d7da !important;
+    color: #b02a37 !important;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    width: 100%;
+
+    padding: 40px;
+
+    text-align: center;
+
+    background: #f8f9fa;
+
+    border-radius: 10px;
+
+    color: #6c757d;
+}
+
+.empty-state div {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+
+    background: transparent;
+}
+
+.empty-state p {
+    margin: 0;
+
+    background: #f8f9fa;
+}
+
+
+/* =========================================================
+   INFORMATION BOX
+========================================================= */
+
+.report-info {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+
+    background: #e7f1ff;
+
+    border: 1px solid #b6d4fe;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    margin-bottom: 30px;
+}
+
+.info-icon {
+    font-size: 25px;
+    background: transparent;
+}
+
+.report-info h3 {
+    margin: 0 0 7px;
+
+    font-size: 16px;
+
+    color: #084298;
+
+    background: #e7f1ff;
+}
+
+.report-info p {
+    margin: 0;
+
+    color: #084298;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    background: #e7f1ff;
+}
+
+
+/* =========================================================
+   LOADING PAGE
+========================================================= */
+
+.reports-loading {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(circle at 10% 15%, #b9e7ff 0%, transparent 32%),
+        radial-gradient(circle at 90% 20%, #d9c7ff 0%, transparent 30%),
+        radial-gradient(circle at 80% 90%, #bcecff 0%, transparent 32%),
+        linear-gradient(135deg, #e9f7ff 0%, #cfeaff 45%, #e8ddff 100%);
+
+    font-family: Arial, sans-serif;
+}
+
+.loading-box {
+    width: 100%;
+    max-width: 450px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.loading-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+    background: white;
+}
+
+.loading-box h2 {
+    margin: 0 0 8px;
+
+    background: white;
+
+    color: #212529;
+}
+
+.loading-box p {
+    margin: 0;
+
+    background: white;
+
+    color: #6c757d;
+}
+
+
+/* =========================================================
+   ERROR PAGE
+========================================================= */
+
+.error-box {
+    width: 100%;
+    max-width: 500px;
+
+    margin: 100px auto;
+
+    padding: 40px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.error-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+    background: white;
+}
+
+.error-box h2 {
+    margin: 0 0 10px;
+
+    background: white;
+
+    color: #212529;
+}
+
+.error-box p {
+    color: #6c757d;
+
+    line-height: 1.5;
+
+    background: white;
+}
+
+
+/* =========================================================
+   RETRY BUTTON
+========================================================= */
+
+.retry-button {
+    margin-top: 15px;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #0d6efd;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.retry-button:hover {
+    background: #0b5ed7;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .reports-container {
+        padding: 25px;
+    }
+
+    .report-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .login-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .reports-container {
+        width: 100%;
+        min-height: 100vh;
+
+        padding: 20px 15px;
+
+        background:
+        radial-gradient(circle at 10% 15%, #b9e7ff 0%, transparent 32%),
+        radial-gradient(circle at 90% 20%, #d9c7ff 0%, transparent 30%),
+        radial-gradient(circle at 80% 90%, #bcecff 0%, transparent 32%),
+        linear-gradient(135deg, #e9f7ff 0%, #cfeaff 45%, #e8ddff 100%);
+    }
+
+    .reports-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 20px;
+
+        margin-bottom: 20px;
+    }
+
+    .header-title {
+        width: 100%;
+    }
+
+    .header-title h1 {
+        font-size: 25px;
+    }
+
+    .reports-header p {
+        font-size: 14px;
+    }
+
+    .refresh-button {
+        width: 100%;
+
+        padding: 12px;
+    }
+
+    .report-section {
+        padding: 20px;
+
+        margin-bottom: 20px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .section-icon {
+        min-width: 45px;
+        width: 45px;
+        height: 45px;
+
+        font-size: 21px;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+    }
+
+    .section-heading p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .report-cards {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .login-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .report-card {
+        padding: 20px;
+    }
+
+    .report-card h1 {
+        font-size: 32px;
+    }
+
+    .health-summary {
+        padding: 20px;
+    }
+
+    .health-info {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .health-score {
+        font-size: 32px;
+    }
+
+    .report-table-container {
+        width: 100%;
+    }
+
+    .report-table {
+        min-width: 600px;
+    }
+
+    .recent-activity {
+        margin-top: 25px;
+    }
+
+    .report-info {
+        flex-direction: column;
+    }
+
+    .error-box {
+        margin: 50px auto;
+        padding: 30px 20px;
+    }
+
+    .reports-loading {
+        padding: 20px;
+    }
+
+    .loading-box {
+        padding: 30px 20px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .reports-container {
+        padding: 12px 10px;
+    }
+
+    .reports-header {
+        padding: 18px 15px;
+
+        border-radius: 10px;
+    }
+
+    .header-title {
+        gap: 8px;
+    }
+
+    .header-icon {
+        font-size: 27px;
+    }
+
+    .header-title h1 {
+        font-size: 21px;
+    }
+
+    .reports-header p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .report-section {
+        padding: 15px;
+
+        border-radius: 10px;
+    }
+
+    .section-heading {
+        gap: 10px;
+    }
+
+    .section-icon {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 18px;
+    }
+
+    .section-heading p {
+        font-size: 12px;
+    }
+
+    .report-card {
+        padding: 18px 12px;
+    }
+
+    .report-card h3 {
+        font-size: 14px;
+    }
+
+    .report-card h1 {
+        font-size: 29px;
+    }
+
+    .report-card p {
+        font-size: 12px;
+    }
+
+    .health-summary {
+        padding: 17px;
+    }
+
+    .health-info h3 {
+        font-size: 16px;
+    }
+
+    .health-score {
+        font-size: 29px;
+    }
+
+    .health-progress {
+        height: 10px;
+    }
+
+    .status-badge {
+        font-size: 11px;
+        padding: 5px 9px;
+    }
+
+    .report-table th,
+    .report-table td {
+        padding: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .reports-container {
+        padding: 8px;
+    }
+
+    .reports-header {
+        padding: 15px 12px;
+    }
+
+    .header-title h1 {
+        font-size: 19px;
+    }
+
+    .header-icon {
+        font-size: 24px;
+    }
+
+    .report-section {
+        padding: 12px;
+    }
+
+    .section-heading h2 {
+        font-size: 17px;
+    }
+
+    .report-card {
+        padding: 16px 10px;
+    }
+
+    .report-card h1 {
+        font-size: 27px;
+    }
+
+    .health-summary {
+        padding: 14px;
+    }
+}
