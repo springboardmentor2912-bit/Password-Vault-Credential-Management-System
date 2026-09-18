@@ -1,0 +1,14 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Environment and secrets
+.env
+*.env
+
+# Build files
+backend/target/
+frontend/node_modules/
+
+# Logs
+*.log
