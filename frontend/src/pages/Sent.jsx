@@ -1,0 +1,680 @@
+import API_URL from "../config";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+import Layout from "../components/Layout";
+import "../styles/dashboard/dashboard.css";
+
+
+function Sent() {
+
+    const navigate = useNavigate();
+
+    const [fullName, setFullName] =
+        useState("");
+
+    const [items, setItems] =
+        useState([]);
+
+    const [loading, setLoading] =
+        useState(true);
+
+    const [error, setError] =
+        useState("");
+
+
+    // =====================================================
+    // LOAD SENT PASSWORDS
+    // =====================================================
+
+    useEffect(() => {
+
+        loadSent();
+
+    }, []);
+
+
+    async function loadSent() {
+
+        try {
+
+            setLoading(true);
+            setError("");
+
+
+            const response =
+                await fetch(
+                    `${API_URL}/api/shares/sent`,
+                    {
+                        method: "GET",
+                        credentials: "include"
+                    }
+                );
+
+
+            // =================================================
+            // NOT LOGGED IN
+            // =================================================
+
+            if (response.status === 401) {
+
+                navigate("/login");
+
+                return;
+            }
+
+
+            // =================================================
+            // SERVER ERROR
+            // =================================================
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Unable to load sent passwords"
+                );
+            }
+
+
+            // =================================================
+            // RESPONSE
+            // =================================================
+
+            const data =
+                await response.json();
+
+
+            // =================================================
+            // GET USER NAME
+            // =================================================
+
+            if (
+                data &&
+                !Array.isArray(data) &&
+                data.fullName
+            ) {
+
+                setFullName(
+                    data.fullName
+                );
+
+            }
+
+
+            setItems(
+                Array.isArray(data)
+                    ? data
+                    : []
+            );
+
+
+        } catch (err) {
+
+            console.error(
+                "Sent error:",
+                err
+            );
+
+
+            if (
+                err instanceof TypeError
+            ) {
+
+                setError(
+                    "Unable to connect to server. Please check your connection and try again."
+                );
+
+            } else {
+
+                setError(
+                    "Unable to load sent passwords. Please try again."
+                );
+
+            }
+
+        } finally {
+
+            setLoading(false);
+
+        }
+
+    }
+
+
+    // =====================================================
+    // LOAD USER PROFILE NAME
+    // =====================================================
+
+    useEffect(() => {
+
+        async function loadUser() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        `${API_URL}/api/dashboard`,
+                        {
+                            method: "GET",
+                            credentials: "include"
+                        }
+                    );
+
+
+                if (
+                    response.status === 401
+                ) {
+
+                    navigate("/login");
+
+                    return;
+                }
+
+
+                if (!response.ok) {
+
+                    return;
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                if (
+                    !data.authenticated
+                ) {
+
+                    navigate("/login");
+
+                    return;
+                }
+
+
+                setFullName(
+                    data.fullName || ""
+                );
+
+
+            } catch (err) {
+
+                console.error(
+                    "Profile loading error:",
+                    err
+                );
+
+            }
+
+        }
+
+
+        loadUser();
+
+    }, [navigate]);
+
+
+    // =====================================================
+    // REMOVE ACCESS
+    // =====================================================
+
+    async function removeAccess(
+        shareId
+    ) {
+
+        const confirmDelete =
+            window.confirm(
+                "Remove this user's access?"
+            );
+
+
+        if (!confirmDelete) {
+
+            return;
+        }
+
+
+        try {
+
+            const response =
+                await fetch(
+                    `${API_URL}/api/shares/${shareId}`,
+                    {
+                        method: "DELETE",
+                        credentials: "include"
+                    }
+                );
+
+
+            if (response.status === 401) {
+
+                navigate("/login");
+
+                return;
+            }
+
+
+            if (!response.ok) {
+
+                const message =
+                    await response.text();
+
+                const technicalError =
+                    /Exception|at org\.|at java\.|StackTrace|Error:/i.test(
+                        message
+                    );
+
+
+                if (
+                    technicalError ||
+                    !message.trim()
+                ) {
+
+                    alert(
+                        "Unable to remove access. Please try again."
+                    );
+
+                } else {
+
+                    alert(message);
+
+                }
+
+                return;
+            }
+
+
+            // =================================================
+            // Refresh Sent list
+            // =================================================
+
+            await loadSent();
+
+
+        } catch (err) {
+
+            console.error(
+                "Remove access error:",
+                err
+            );
+
+
+            if (
+                err instanceof TypeError
+            ) {
+
+                alert(
+                    "Unable to connect to server. Please check your connection and try again."
+                );
+
+            } else {
+
+                alert(
+                    "Unable to remove access. Please try again."
+                );
+
+            }
+
+        }
+
+    }
+
+
+    // =====================================================
+    // FORMAT PERMISSION
+    // =====================================================
+
+    function formatPermission(
+        permission
+    ) {
+
+        if (!permission) {
+
+            return "-";
+        }
+
+
+        switch (permission) {
+
+            case "VIEW_ONLY":
+
+                return "View Only";
+
+
+            case "EDIT":
+
+                return "Edit Access";
+
+
+            case "FULL_MANAGEMENT":
+
+                return "Full Management";
+
+
+            default:
+
+                return permission;
+
+        }
+    }
+
+
+    // =====================================================
+    // LOADING
+    // =====================================================
+
+    if (loading) {
+
+        return (
+
+            <Layout
+                fullName={fullName}
+            >
+
+                <section className="table-card">
+
+                    <div className="table-header">
+
+                        <h3>
+                            Loading Sent Passwords...
+                        </h3>
+
+                    </div>
+
+                </section>
+
+            </Layout>
+
+        );
+
+    }
+
+
+    // =====================================================
+    // MAIN UI
+    // =====================================================
+
+    return (
+
+        <Layout
+            fullName={fullName}
+        >
+
+            {/* =================================================
+                PAGE HEADER
+            ================================================= */}
+
+            <section className="welcome">
+
+                <h2>
+                    Sent
+                </h2>
+
+                <p>
+                    Passwords shared by you
+                </p>
+
+            </section>
+
+
+            {/* =================================================
+                ERROR
+            ================================================= */}
+
+            {error && (
+
+                <p className="error">
+
+                    {error}
+
+                </p>
+
+            )}
+
+
+            {/* =================================================
+                EMPTY
+            ================================================= */}
+
+            {!error &&
+                items.length === 0 && (
+
+                    <section className="table-card">
+
+                        <div className="table-header">
+
+                            <h3>
+                                Nothing shared yet
+                            </h3>
+
+                        </div>
+
+
+                        <div
+                            style={{
+                                textAlign:
+                                    "center",
+
+                                padding:
+                                    "40px"
+                            }}
+                        >
+
+                            <i
+                                className="fa-solid fa-paper-plane"
+
+                                style={{
+                                    fontSize:
+                                        "35px",
+
+                                    marginBottom:
+                                        "15px"
+                                }}
+                            ></i>
+
+
+                            <p>
+
+                                Passwords you share
+                                will appear here.
+
+                            </p>
+
+                        </div>
+
+                    </section>
+
+                )}
+
+
+            {/* =================================================
+                SENT TABLE
+            ================================================= */}
+
+            {!error &&
+                items.length > 0 && (
+
+                    <section className="table-card">
+
+
+                        {/* TABLE HEADER */}
+
+                        <div className="table-header">
+
+                            <h3>
+                                Passwords Shared By You
+                            </h3>
+
+                        </div>
+
+
+                        {/* TABLE */}
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Website
+                                    </th>
+
+                                    <th>
+                                        Shared With
+                                    </th>
+
+                                    <th>
+                                        Permission
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                {items.map(
+                                    (item) => (
+
+                                        <tr
+                                            key={
+                                                item.shareId
+                                            }
+                                        >
+
+
+                                            {/* WEBSITE */}
+
+                                            <td>
+
+                                                <i className="fa-solid fa-globe"></i>
+
+                                                <span>
+
+                                                    {" "}
+
+                                                    {
+                                                        item.websiteName
+                                                    }
+
+                                                </span>
+
+                                            </td>
+
+
+                                            {/* SHARED WITH */}
+
+                                            <td>
+
+                                                <strong>
+
+                                                    {
+                                                        item.recipientName
+                                                    }
+
+                                                </strong>
+
+
+                                                <small>
+
+                                                    {
+                                                        item.recipientEmail
+                                                    }
+
+                                                </small>
+
+                                            </td>
+
+
+                                            {/* PERMISSION */}
+
+                                            <td>
+
+                                                <span
+                                                    className="permission"
+                                                >
+
+                                                    {
+                                                        formatPermission(
+                                                            item.permission
+                                                        )
+                                                    }
+
+                                                </span>
+
+                                            </td>
+
+
+                                            {/* ACTIONS */}
+
+                                            <td>
+
+
+                                                {/* MANAGE */}
+
+                                                <Link
+                                                    to={
+                                                        `/share-password/${item.passwordId}`
+                                                    }
+
+                                                    title="Manage Sharing"
+                                                >
+
+                                                    <i
+                                                        className="fa-solid fa-gear action"
+                                                    ></i>
+
+                                                </Link>
+
+
+                                                {" "}
+
+
+                                                {/* REMOVE */}
+
+                                                <button
+                                                    type="button"
+                                                    className="delete-password-btn"
+
+                                                    onClick={() =>
+                                                        removeAccess(
+                                                            item.shareId
+                                                        )
+                                                    }
+
+                                                    title="Remove Access"
+                                                >
+
+                                                    <i
+                                                        className="fa-solid fa-user-minus action delete"
+                                                    ></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+                                    )
+                                )}
+
+                            </tbody>
+
+                        </table>
+
+                    </section>
+
+                )}
+
+        </Layout>
+
+    );
+}
+
+
+export default Sent;

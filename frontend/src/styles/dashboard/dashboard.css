@@ -1,0 +1,1159 @@
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard-page {
+    min-height: 100vh;
+    background: #F8FAFC;
+    color: #334155;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.dashboard-page .navbar {
+    height: 70px;
+
+    background: #1E293B;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 35px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+
+    position: relative;
+    z-index: 100;
+}
+
+.dashboard-page .logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.dashboard-page .logo i {
+    color: #60A5FA;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.dashboard-page .profile {
+    position: relative;
+}
+
+.dashboard-page .profile-btn {
+    width: auto;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    padding: 8px 10px;
+
+    border-radius: 8px;
+
+    transition: .3s;
+}
+
+.dashboard-page .profile-btn:hover {
+    background: rgba(255, 255, 255, .08);
+}
+
+.dashboard-page .profile-btn i:first-child {
+    font-size: 30px;
+}
+
+.dashboard-page .profile-btn i:last-child {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN
+========================================================= */
+
+.dashboard-page .dropdown {
+    display: none;
+
+    position: absolute;
+
+    right: 0;
+    top: 55px;
+
+    width: 220px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+
+    overflow: hidden;
+
+    z-index: 999;
+}
+
+.dashboard-page .dropdown.show {
+    display: block;
+}
+
+.dashboard-page .dropdown a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 20px;
+
+    text-decoration: none;
+
+    color: #334155;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: .3s;
+}
+
+.dashboard-page .dropdown a:hover {
+    background: #F1F5F9;
+
+    text-decoration: none;
+}
+
+.dashboard-page .dropdown a i {
+    width: 18px;
+
+    text-align: center;
+
+    color: #4F46E5;
+}
+
+.dashboard-page .dropdown hr {
+    border: none;
+
+    border-top: 1px solid #E5E7EB;
+
+    margin: 3px 0;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.dashboard-page .wrapper {
+    display: flex;
+
+    min-height: calc(100vh - 70px);
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.dashboard-page .sidebar {
+    width: 240px;
+
+    flex-shrink: 0;
+
+    background: white;
+
+    padding: 25px 15px;
+
+    box-shadow: 3px 0 12px rgba(0, 0, 0, .08);
+}
+
+.dashboard-page .sidebar a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 18px;
+
+    margin-bottom: 12px;
+
+    text-decoration: none;
+
+    color: #475569;
+
+    border-radius: 12px;
+
+    transition: .3s;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dashboard-page .sidebar a:hover {
+    background: #EEF2FF;
+
+    color: #4F46E5;
+
+    transform: translateX(6px);
+
+    text-decoration: none;
+}
+
+.dashboard-page .sidebar .active {
+    background: #4F46E5;
+
+    color: white;
+
+    box-shadow: 0 5px 12px rgba(79, 70, 229, .25);
+}
+
+.dashboard-page .sidebar .active:hover {
+    transform: none;
+
+    background: #4F46E5;
+
+    color: white;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.dashboard-page .content {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 35px;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.dashboard-page .welcome {
+    margin-bottom: 30px;
+
+    text-align: left;
+}
+
+.dashboard-page .welcome h2 {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+    color: #1E293B;
+
+    font-weight: 600;
+
+    text-align: left;
+}
+
+.dashboard-page .welcome h2 span {
+    color: #4F46E5;
+}
+
+.dashboard-page .welcome p {
+    color: #64748B;
+
+    margin: 0;
+
+    font-size: 17px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   PASSWORD HEALTH
+========================================================= */
+
+.dashboard-page .password-health-card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 28px 30px;
+
+    margin-bottom: 35px;
+
+    border: 1px solid #F1F5F9;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .08);
+}
+
+
+/* =========================================================
+   PASSWORD HEALTH HEADER
+========================================================= */
+
+.dashboard-page .password-health-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+.dashboard-page .password-health-header h3 {
+
+    margin: 0;
+
+    color: #1E293B;
+
+    font-size: 25px;
+
+    font-weight: 600;
+}
+
+.dashboard-page .password-health-header h3 i {
+
+    color: #4F46E5;
+
+    margin-right: 10px;
+}
+
+.dashboard-page .password-health-header p {
+
+    margin: 7px 0 0;
+
+    color: #64748B;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   OVERALL HEALTH SCORE
+========================================================= */
+
+.dashboard-page .health-score {
+
+    text-align: right;
+
+    min-width: 120px;
+}
+
+.dashboard-page .health-score span {
+
+    display: block;
+
+    color: #64748B;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.dashboard-page .health-score strong {
+
+    display: block;
+
+    color: #4F46E5;
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HEALTH STAT GRID
+========================================================= */
+
+.dashboard-page .health-stat-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   HEALTH STAT
+========================================================= */
+
+.dashboard-page .health-stat {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 18px;
+
+    background: #F8FAFC;
+
+    border: 1px solid #EEF2F7;
+
+    border-radius: 14px;
+
+    transition: .25s;
+}
+
+.dashboard-page .health-stat:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, .06);
+}
+
+
+/* =========================================================
+   HEALTH STAT NUMBERS
+========================================================= */
+
+.dashboard-page .health-stat strong {
+
+    display: block;
+
+    color: #1E293B;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+}
+
+.dashboard-page .health-stat span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #64748B;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   HEALTH ICON
+========================================================= */
+
+.dashboard-page .health-icon {
+
+    width: 46px;
+
+    height: 46px;
+
+    min-width: 46px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+/* TOTAL */
+
+.dashboard-page .health-icon.total {
+
+    background: #EEF2FF;
+
+    color: #4F46E5;
+}
+
+
+/* STRONG */
+
+.dashboard-page .health-icon.strong {
+
+    background: #ECFDF5;
+
+    color: #16A34A;
+}
+
+
+/* MEDIUM */
+
+.dashboard-page .health-icon.medium {
+
+    background: #FFF7ED;
+
+    color: #D97706;
+}
+
+
+/* WEAK */
+
+.dashboard-page .health-icon.weak {
+
+    background: #FEF2F2;
+
+    color: #DC2626;
+}
+
+
+/* =========================================================
+   HEALTH PROGRESS
+========================================================= */
+
+.dashboard-page .health-progress {
+
+    margin-top: 25px;
+}
+
+.dashboard-page .health-progress-label {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+
+    color: #64748B;
+
+    font-size: 13px;
+}
+
+.dashboard-page .health-progress-label strong {
+
+    color: #1E293B;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PROGRESS TRACK
+========================================================= */
+
+.dashboard-page .health-progress-track {
+
+    width: 100%;
+
+    height: 10px;
+
+    background: #E5E7EB;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PROGRESS FILL
+========================================================= */
+
+.dashboard-page .health-progress-fill {
+
+    height: 100%;
+
+    background: #4F46E5;
+
+    border-radius: 20px;
+
+    transition:
+        width .5s ease;
+}
+
+
+/* =========================================================
+   HEALTH LOADING
+========================================================= */
+
+.dashboard-page .health-loading {
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #64748B;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.dashboard-page .table-card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+
+    border: 1px solid #F1F5F9;
+
+    overflow: hidden;
+}
+
+.dashboard-page .table-header {
+    margin-bottom: 22px;
+}
+
+.dashboard-page .table-header h3 {
+    color: #1E293B;
+
+    font-size: 26px;
+
+    font-weight: 600;
+
+    margin: 0;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.dashboard-page table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.dashboard-page thead {
+    background: #EEF2FF;
+}
+
+.dashboard-page th {
+    padding: 18px 20px;
+
+    color: #4F46E5;
+
+    text-align: left;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+.dashboard-page td {
+    padding: 20px;
+
+    border-bottom: 1px solid #E5E7EB;
+
+    color: #475569;
+
+    font-size: 17px;
+
+    vertical-align: middle;
+}
+
+.dashboard-page tbody tr {
+    transition: .25s;
+}
+
+.dashboard-page tbody tr:hover {
+    background: #F9FAFB;
+}
+
+.dashboard-page tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   WEBSITE ICON
+========================================================= */
+
+.dashboard-page td:first-child i {
+    color: #2563EB;
+
+    margin-right: 10px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.dashboard-page td:last-child {
+    white-space: nowrap;
+}
+
+.dashboard-page .actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 18px;
+
+    width: auto;
+}
+
+
+/* =========================================================
+   ACTION LINKS
+========================================================= */
+
+.dashboard-page .actions a {
+    width: 32px !important;
+    height: 32px !important;
+
+    min-width: 32px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-decoration: none;
+
+    box-shadow: none !important;
+
+    border-radius: 0 !important;
+
+    cursor: pointer;
+
+    transition: transform .2s ease;
+}
+
+
+/* =========================================================
+   ACTION ICONS
+========================================================= */
+
+.dashboard-page td:last-child {
+    white-space: nowrap;
+}
+
+.dashboard-page td:last-child a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: auto;
+
+    padding: 0;
+    margin: 0 12px 0 0;
+
+    background: transparent !important;
+
+    border: none;
+    box-shadow: none;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: transform .2s ease;
+}
+
+.dashboard-page td:last-child a:last-child {
+    margin-right: 0;
+}
+
+
+/* =========================================================
+   ACTION ICON
+========================================================= */
+
+.dashboard-page .action {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: auto;
+
+    padding: 0;
+
+    background: transparent !important;
+
+    border: none;
+    box-shadow: none;
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+
+/* =========================================================
+   VIEW
+========================================================= */
+
+.dashboard-page .view {
+    color: #2563EB;
+}
+
+.dashboard-page .view:hover {
+    color: #1D4ED8;
+
+    transform: scale(1.15);
+}
+
+
+/* =========================================================
+   EDIT
+========================================================= */
+
+.dashboard-page .edit {
+    color: #F59E0B;
+}
+
+.dashboard-page .edit:hover {
+    color: #D97706;
+
+    transform: scale(1.15);
+}
+
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+.dashboard-page .delete {
+    color: #EF4444;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+.dashboard-page .delete:hover {
+    color: #DC2626;
+
+    background: transparent !important;
+
+    transform: scale(1.15);
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   SHARE
+========================================================= */
+
+.dashboard-page .share {
+    color: #7C3AED;
+}
+
+.dashboard-page .share:hover {
+    color: #6D28D9;
+
+    transform: scale(1.15);
+}
+
+
+/* =========================================================
+   REMOVE GLOBAL BUTTON BLUE BACKGROUND
+========================================================= */
+
+.dashboard-page td:last-child button {
+    width: auto !important;
+    min-width: 0 !important;
+
+    height: auto !important;
+
+    padding: 0 !important;
+    margin: 0 12px 0 0 !important;
+
+    background: transparent !important;
+
+    color: inherit;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    font-size: 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.dashboard-page td:last-child button:last-child {
+    margin-right: 0 !important;
+}
+
+.dashboard-page td:last-child button:hover {
+    background: transparent !important;
+
+    box-shadow: none !important;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .dashboard-page .health-stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-page .sidebar {
+        width: 200px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE / TABLET NAVIGATION
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .dashboard-page .wrapper {
+        flex-direction: column;
+    }
+
+    /* Horizontal navigation */
+    .dashboard-page .sidebar {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 8px;
+
+        padding: 10px 12px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        box-sizing: border-box;
+
+        flex-shrink: 0;
+
+        box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Navigation items */
+    .dashboard-page .sidebar a {
+        flex: 0 0 auto;
+
+        width: auto;
+
+        margin: 0;
+
+        padding: 12px 14px;
+
+        white-space: nowrap;
+
+        font-size: 14px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 8px;
+
+        transform: none;
+    }
+
+    .dashboard-page .sidebar a:hover {
+        transform: none;
+    }
+
+    /* Content */
+    .dashboard-page .content {
+        width: 100%;
+        min-width: 0;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+    }
+
+    /* Password health */
+    .dashboard-page .password-health-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-page .health-score {
+        text-align: left;
+    }
+
+    .dashboard-page .health-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Table */
+    .dashboard-page .table-card {
+        overflow-x: auto;
+    }
+
+    .dashboard-page table {
+        min-width: 750px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .dashboard-page .navbar {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    .dashboard-page .logo {
+        font-size: 20px;
+    }
+
+    .dashboard-page .profile-btn {
+        padding: 6px;
+    }
+
+    .dashboard-page .profile-btn span {
+        display: none;
+    }
+
+    .dashboard-page .sidebar {
+        padding: 8px 10px;
+        gap: 6px;
+    }
+
+    .dashboard-page .sidebar a {
+        padding: 10px 12px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    .dashboard-page .content {
+        padding: 15px;
+    }
+
+    .dashboard-page .welcome h2 {
+        font-size: 25px;
+    }
+
+    .dashboard-page .welcome p {
+        font-size: 15px;
+    }
+
+    .dashboard-page .password-health-card {
+        padding: 20px;
+    }
+
+    .dashboard-page .password-health-header h3 {
+        font-size: 22px;
+    }
+
+    .dashboard-page .health-stat {
+        padding: 15px;
+    }
+
+    .dashboard-page .table-card {
+        padding: 20px;
+    }
+
+    .dashboard-page .table-header h3 {
+        font-size: 22px;
+    }
+
+    .dashboard-page th {
+        font-size: 15px;
+    }
+
+    .dashboard-page td {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .dashboard-page .sidebar {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .dashboard-page .sidebar a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .dashboard-page .content {
+        padding: 12px;
+    }
+}
