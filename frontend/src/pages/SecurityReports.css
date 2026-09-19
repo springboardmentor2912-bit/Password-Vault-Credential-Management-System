@@ -1,0 +1,145 @@
+/* =========================================
+   SECURITY REPORTS - PROFESSIONAL UI
+========================================= */
+
+.security-reports {
+    background: #f8fafc;
+}
+
+/* Main report sections */
+.security-report-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    background: #ffffff;
+}
+
+/* Summary cards */
+.report-summary-card {
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.report-summary-card strong {
+    font-size: 28px;
+}
+
+/* Muted professional colors */
+
+.color-total {
+    color: #334155;
+}
+
+.color-success {
+    color: #16805c;
+}
+
+.color-warning {
+    color: #b7791f;
+}
+
+.color-danger {
+    color: #c2414c;
+}
+
+/* Borders */
+
+.border-muted-success {
+    border: 1px solid #86bda8 !important;
+}
+
+.border-muted-warning {
+    border: 1px solid #d8b46a !important;
+}
+
+.border-muted-danger {
+    border: 1px solid #d9969d !important;
+}
+
+/* Progress bars */
+
+.progress {
+    height: 10px;
+    background-color: #e9edf2;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-muted-success {
+    background-color: #3f9274 !important;
+}
+
+.progress-muted-warning {
+    background-color: #c99a3b !important;
+}
+
+.progress-muted-danger {
+    background-color: #c75b65 !important;
+}
+
+/* Health score box */
+
+.health-score {
+    background: #eef4fb;
+    border: 1px solid #b9cce3;
+    color: #274c77;
+    border-radius: 10px;
+}
+
+.health-score-value {
+    color: #274c77;
+}
+
+/* Login activity */
+
+.login-success {
+    color: #16805c;
+}
+
+.login-failed {
+    color: #c2414c;
+}
+
+/* Status badges */
+
+.status-success {
+    background-color: #3f9274;
+    color: white;
+}
+
+.status-failed {
+    background-color: #c75b65;
+    color: white;
+}
+
+/* Table */
+
+.security-table thead {
+    background-color: #f1f5f9;
+}
+
+.security-table th {
+    color: #475569;
+    font-weight: 600;
+}
+
+.security-table td {
+    color: #475569;
+}
+
+.security-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Section headings */
+
+.report-section-title {
+    color: #1e293b;
+}
+
+/* Subtitle */
+
+.report-subtitle {
+    color: #64748b;
+}
